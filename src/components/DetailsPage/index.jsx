@@ -3,7 +3,7 @@ import {useEffect, useState } from 'react';
 
 export default function DetailsPage(){
     const {id} = useParams();
-    const [plantDetails, setPlantDetails] = useState();
+    const [plantDetails, setPlantDetails] = useState(null);
 
     useEffect(()=>{
         const fetchPlantDetails = async () => {
@@ -13,7 +13,7 @@ export default function DetailsPage(){
             const data = await response.json();
             setPlantDetails(data);
         }
-        fetchPlantDetails();
+        if(plantDetails?.id !== id || !plantDetails) fetchPlantDetails();
     },[])
     return(
         <>

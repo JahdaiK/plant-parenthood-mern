@@ -12,7 +12,7 @@ export default function HomePage() {
     setPlants(data);
   }
   useEffect(() => {
-    fetchPlants();
+    if(plants.length===0) fetchPlants();
   }, []);
 
   //get plants via search
@@ -25,6 +25,7 @@ export default function HomePage() {
  
   return (
     <>
+
       <h1>This is the HomePage</h1>
     </>
   );
