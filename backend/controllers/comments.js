@@ -5,7 +5,7 @@ const router = express.Router();
 const db = require("../models");
 
 const config = require("../../jwt.config.js");
-const user = require("../models/user.js");
+// const user = require("../models/user.js");
 
 /* Middleware that checks if a JWT sent from the client is valid.
    Used for all routes that require authorization
@@ -32,20 +32,20 @@ const authMiddleware = (req, res, next) => {
 };
 
 //Routes:
-//get
+//get plant index
 router.get("/:plantId", function (req, res) {
   db.Comment.find({ plantId: req.params.plantId }).then((comments) =>
     res.json(comments)
   );
 });
-//create
+//create comment
 router.post("/", authMiddleware, (req, res) => {
   db.Comment.create({
     ...req.body,
     userId: req.user.id,
   }).then((comment) => res.json(comment));
 });
-//update
+//update comment
 router.put("/:id", authMiddleware, async (req, res) => {
   const userComment = await db.Comment.findById(req.params.id);
   if (userComment.userId == req.user.id) {
@@ -60,7 +60,7 @@ router.put("/:id", authMiddleware, async (req, res) => {
   }
 });
 
-//destroy
+//destroy comment
 router.delete("/:id", authMiddleware, async (req, res) => {
   const userComment = await db.Comment.findById(req.params.id);
   if (userComment.userId == req.user.id) {
