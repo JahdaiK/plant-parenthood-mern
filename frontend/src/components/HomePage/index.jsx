@@ -20,10 +20,10 @@ export default function HomePage() {
   }, []);
 
   //get plants via search
-  async function findPlants(searchTerm) {
+  async function findPlants(query) {
     const url = `https://perenual.com/api/species-list?key=${
       import.meta.env.VITE_PERENUAL_API_KEY
-    }=${searchTerm}`;
+    }&q=${query}`;
     const res = await fetch(url);
     const { data } = await res.json();
     setPlants(data);
@@ -32,7 +32,10 @@ export default function HomePage() {
   return (
     <>
       <h1>This is the HomePage and you have plants</h1>
-      <SearchBar />
+      <SearchBar 
+      findPlants={findPlants}
+      setPlants={setPlants}
+      fetchPlants={fetchPlants} />
       <Gallery plants={plants} setPlants={setPlants} />
     </>
   );
