@@ -39,22 +39,24 @@ export default function AuthFormPage() {
   //   }
   // }
 
-  async function handleSubmitLogin(event){
+  async function handleSubmitLogin(event) {
     event.preventDefault();
-    const {token} = await logIn(logInData);
-    localStorage.setItem('userToken', token)
-    navigate('/')
+    const { token } = await logIn(logInData);
+    localStorage.setItem("userToken", token);
+    navigate("/");
+  
   }
-  async function handleSubmitSignUp(event){
+  async function handleSubmitSignUp(event) {
     event.preventDefault();
-    const {token} = await signUp(signUpData);
-    localStorage.setItem('userToken', token)
-    navigate('/')
+    const { token } = await signUp(signUpData);
+    localStorage.setItem("userToken", token);
+    navigate("/");
+
   }
 
   return (
     <>
-    <button onClick={() => setShowSignUp(!showSignUp)}>
+      <button onClick={() => setShowSignUp(!showSignUp)}>
         {showSignUp ? "Log In" : "Sign Up"}
       </button>
 
@@ -122,7 +124,7 @@ export default function AuthFormPage() {
             onChange={handleSignUpChange}
           />
 
-        <button type="submit">Sign Up</button>
+          <button type="submit">Sign Up</button>
         </form>
       )}
     </>
