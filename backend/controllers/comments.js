@@ -32,12 +32,14 @@ const authMiddleware = (req, res, next) => {
 };
 
 //Routes:
+
 //get plant index
 router.get("/:plantId", function (req, res) {
   db.Comment.find({ plantId: req.params.plantId }).then((comments) =>
     res.json(comments)
   );
 });
+
 //create comment
 router.post("/", authMiddleware, (req, res) => {
   db.Comment.create({
