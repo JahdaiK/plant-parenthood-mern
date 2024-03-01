@@ -26,25 +26,12 @@ export default function AuthFormPage() {
     setSignUpData({ ...signUpData, [event.target.name]: event.target.value });
   }
 
-  // async function handleSubmit(event) {
-  //   event.preventDefault();
-  //   if (!showSignUp) {
-  //     const { token } = await signUp(signUpData);
-  //     localStorage.setItem("userToken", token);
-  //     setLoginStatus(true);
-  //   } else {
-  //     const { token } = await logIn(logInData);
-  //     localStorage.setItem("userToken", token);
-  //     setLoginStatus(true);
-  //   }
-  // }
 
   async function handleSubmitLogin(event) {
     event.preventDefault();
     const { token } = await logIn(logInData);
     localStorage.setItem("userToken", token);
     navigate("/");
-  
   }
   async function handleSubmitSignUp(event) {
     event.preventDefault();

@@ -25,7 +25,7 @@ export default function App() {
     authLink = (
       <button
         onClick={() => {
-          localStorage.clear()
+          localStorage.clear('userToken')
           setLoginStatus(false)
         }}
       >
@@ -46,7 +46,7 @@ export default function App() {
         <Route path="/details/:id" element={<DetailsPage />} />
         <Route
           path="/auth/"
-          element={<AuthFormPage setLoginStatus={setLoginStatus} />}
+          element={<AuthFormPage  />}
         />
       </Routes>
     </>

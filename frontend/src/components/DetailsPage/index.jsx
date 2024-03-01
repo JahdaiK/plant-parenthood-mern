@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import CommentSection from "../CommentSection";
 
 export default function DetailsPage() {
   const { id } = useParams();
@@ -16,6 +17,9 @@ export default function DetailsPage() {
     fetchPlantDetails();
   }, []);
   return (
-    <>{plantDetails ? <p>{plantDetails.common_name}</p> : <p>Loading</p>}</>
+    <>
+    {plantDetails ? <p>{plantDetails.common_name}</p> : <p>Loading</p>}
+    <CommentSection plantId={id}/>
+    </>
   );
 }
