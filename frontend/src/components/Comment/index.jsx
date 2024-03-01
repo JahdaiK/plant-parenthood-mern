@@ -55,6 +55,7 @@ export default function Comment({ data, refreshComments }) {
     <div
                 className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 w-[80vw] mx-auto">
                 <p className="my-2">{data.content}</p>
+                <h2>{data.userName}</h2>
                 <div className="flex justify-end">
                     <button
                         onClick={() => { setShowEditForm(true) }}

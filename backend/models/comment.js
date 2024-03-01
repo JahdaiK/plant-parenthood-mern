@@ -11,11 +11,9 @@ const commentSchema = new mongoose.Schema(
             required: true,
             ref: 'User'
         },
-        userName: {
-            type: mongoose.Schema.Types.ObjectId,
-            required: true,
-            ref: 'User'
-        },
+        
+        userName: String,
+
         content: {
             type: String,
             required: true,

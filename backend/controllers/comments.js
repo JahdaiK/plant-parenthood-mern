@@ -42,10 +42,15 @@ router.get("/:plantId", function (req, res) {
 
 //create comment
 router.post("/", authMiddleware, (req, res) => {
-  db.Comment.create({
-    ...req.body,
-    userId: req.user.id,
-  }).then((comment) => res.json(comment));
+  console.log(req.user)
+  db.User.findById(req.user.id) 
+    .then((user) => { 
+      db.Comment.create({
+        ...req.body,
+        userId: user._id,
+        userName: user.userName
+      }).then((comment) => res.json(comment));
+    })
 });
 //update comment
 router.put("/:id", authMiddleware, async (req, res) => {

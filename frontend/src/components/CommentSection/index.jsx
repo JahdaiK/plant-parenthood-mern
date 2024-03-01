@@ -73,6 +73,8 @@ export default function CommentSection({ plantId }) {
               className="p-2 my-2 h-[100px] w-full bg-gray-100"
               placeholder="Share your thoughts!"
               value={createFormData.content}
+              required
+              minLength={5}
               onChange={handleInputChange}
             />
             <button
