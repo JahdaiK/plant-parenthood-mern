@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Gallery from "../Gallery";
 import SearchBar from "../SearchBar";
+import banner from "../../assets/small_banner.png";
 
 export default function HomePage() {
   const [plants, setPlants] = useState([]);
@@ -31,11 +32,12 @@ export default function HomePage() {
 
   return (
     <>
-      <h1>This is the HomePage and you have plants</h1>
-      <SearchBar 
-      findPlants={findPlants}
-      setPlants={setPlants}
-      fetchPlants={fetchPlants} />
+      
+      <SearchBar
+        findPlants={findPlants}
+        setPlants={setPlants}
+        fetchPlants={fetchPlants}
+      />
       <Gallery plants={plants} setPlants={setPlants} />
     </>
   );

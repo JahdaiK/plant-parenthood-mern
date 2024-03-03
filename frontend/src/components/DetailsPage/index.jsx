@@ -16,9 +16,15 @@ export default function DetailsPage() {
     };
     fetchPlantDetails();
   }, []);
+
+  if(plantDetails)
   return (
     <>
-    {plantDetails ? <p>{plantDetails.common_name}</p> : <p>Loading</p>}
+    {plantDetails ? 
+    
+    <p>{plantDetails.common_name}</p> 
+    
+    : <p>Loading</p>}
     <CommentSection plantId={id}/>
     </>
   );
