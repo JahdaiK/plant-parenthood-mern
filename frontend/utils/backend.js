@@ -5,6 +5,13 @@ export async function getComments(plantId){
     const { data } = await axios.get(`/api/comments/${plantId}`)
     return data
 }
+
+export async function getExtraPlantDetails(plantId){
+    const { data } = await axios.get(`/api/plants/${plantId}`)
+    return data
+}
+
+
 //Authentication Requests
 export async function signUp(user) {
     const { data } = await axios.post('/api/users/signup', user)

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
+
 export default function Card({ plant }) {
   const smallImage = plant.default_image
     ? plant.default_image.small_url

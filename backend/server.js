@@ -15,6 +15,9 @@ const db = require('./models');
 --------------------------------------------------------------- */
 const commentsCtrl = require('./controllers/comments')
 const usersCtrl = require('./controllers/users')
+const plantsCtrl = require('./controllers/plants')
+
+
 
 
 
@@ -44,6 +47,7 @@ app.use(express.json())
 // to handle all routes that begin with `localhost:3000/api/comments`
 app.use('/api/comments', commentsCtrl)
 app.use('/api/users', usersCtrl)
+app.use('/api/plants', plantsCtrl)
 
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */
