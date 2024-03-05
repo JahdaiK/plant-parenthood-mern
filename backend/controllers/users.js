@@ -43,6 +43,7 @@ router.post('/signup', (req, res) => {
 
 // LOG IN (log into a user account)
 router.post('/login', async (req, res) => {
+    console.log('log in route')
     // attempt to find the user by their email in the database
     const foundUser = await db.User.findOne({ email: req.body.email })
     // check to:
