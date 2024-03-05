@@ -14,7 +14,7 @@ export default function App() {
     if (localStorage.getItem("userToken")) {
       setLoginStatus(true);
     }
-  });
+  },[]);
 
   let authLink = (
     <Link to="/auth">
@@ -50,7 +50,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/details/:id" element={<DetailsPage />} />
-        <Route path="/auth/" element={<AuthFormPage />} />
+        <Route path="/auth/" element={<AuthFormPage 
+        setLoginStatus={setLoginStatus}/>} />
       </Routes>
     </>
   );

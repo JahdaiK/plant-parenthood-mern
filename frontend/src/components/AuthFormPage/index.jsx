@@ -2,7 +2,7 @@ import { useState } from "react";
 import { logIn, signUp } from "../../../utils/backend";
 import { useNavigate } from "react-router-dom";
 
-export default function AuthFormPage() {
+export default function AuthFormPage({setLoginStatus}) {
   const [showSignUp, setShowSignUp] = useState(false);
 
   const [logInData, setLogInData] = useState({
@@ -28,12 +28,14 @@ export default function AuthFormPage() {
 
 
   async function handleSubmitLogin(event) {
+    setLoginStatus(true)
     event.preventDefault();
     const { token } = await logIn(logInData);
     localStorage.setItem("userToken", token);
     navigate("/");
   }
   async function handleSubmitSignUp(event) {
+    setLoginStatus(true)
     event.preventDefault();
     const { token } = await signUp(signUpData);
     localStorage.setItem("userToken", token);
