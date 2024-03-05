@@ -6,6 +6,7 @@ const db = require("../models");
 
 //get extraPlantDetails
 router.get("/:plantId", async function (req, res) {
+  console.log('plant details route')
   let plant = await db.Plant.findOne({ plantId: req.params.plantId });
   // console.log('plant', plant)
   if (plant) {

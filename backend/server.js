@@ -40,10 +40,7 @@ app.use(express.json())
 // use the React build folder for static files
 app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
 
-// Any other route not matching the routes above gets routed by React
-app.get('*', (req, res) => {
-    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
-});
+
 
 
 /* Mount routes
@@ -54,6 +51,10 @@ app.use('/api/comments', commentsCtrl)
 app.use('/api/users', usersCtrl)
 app.use('/api/plants', plantsCtrl)
 
+// Any other route not matching the routes above gets routed by React
+app.get('*', (req, res) => {
+    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
+});
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */
 app.listen(process.env.PORT, function () {

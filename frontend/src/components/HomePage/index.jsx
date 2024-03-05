@@ -11,11 +11,14 @@ export default function HomePage() {
       import.meta.env.VITE_PERENUAL_API_KEY
     }&indoor=1`;
     const res = await fetch(url);
-    const { data } = await res.json(); console.log(data)
+    const { data } = await res.json(); 
+    console.log(data)
     const shuffledPlants = [];
-    while (data.length > 0) { console.log(data, 'In the fetch plants while loop')
+    while (data.length > 0) { 
+      console.log(data, 'In the fetch plants while loop')
       let randomNum = Math.random() * data.length;
-      shuffledPlants.push(...data.splice(randomNum)); console.log(shuffledPlants, 'shuffled in the whole loop')
+      shuffledPlants.push(...data.splice(randomNum)); 
+      console.log(shuffledPlants, 'shuffled in the whole loop')
     }
     setPlants(shuffledPlants);
   }
