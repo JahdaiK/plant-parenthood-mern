@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { postComment, getComments } from "../../../utils/backend"
+import { postComment, getComments } from "../../../utils/backend";
 import Comment from "../Comment";
 
-export default function CommentSection({ plantId }) {
+export default function CommentSection({ plantId, plantDetails }) {
   const [comments, setComments] = useState([]);
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [createFormData, setCreateFormData] = useState({
@@ -34,8 +34,8 @@ export default function CommentSection({ plantId }) {
       content: "",
     });
     setShowCreateForm(false);
-    postComment({ ...createFormData, plantId: plantId }).then(
-      () => refreshComments()
+    postComment({ ...createFormData, plantId: plantId }).then(() =>
+      refreshComments()
     );
   }
 
@@ -45,7 +45,7 @@ export default function CommentSection({ plantId }) {
     </p>,
   ];
   if (comments.length > 0) {
-    commentElements = comments.map(comment => {
+    commentElements = comments.map((comment) => {
       return (
         <Comment
           key={comment._id}
@@ -62,16 +62,28 @@ export default function CommentSection({ plantId }) {
   }
   return (
     <>
-      <div className="bg-blue-200">
-        <h1>Plarenting Advice</h1>
-        <button onClick={toggleCreateForm}>{buttonText}</button>
+      <div className="comment-section bg-[#EDFFCF] rounded-t-lg p-4 pb-10 mt-4 mx-10 space-y-4 relative shadow-xl">
+        <div className="">
+          <h2 className="sm:text-2xl md:text-3xl font-bold text-center text-[#0F6359]">
+            Let's Talk: {plantDetails.commonName}
+          </h2>
+          <button
+            className="px-4 py-2 rounded mb-2 mt-2 bg-[#0F6359] text-white font-bold sm:text-sm md:text-xl "
+            onClick={toggleCreateForm}
+          >
+            {buttonText}
+          </button>
+        </div>
 
         {showCreateForm && (
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={handleSubmit}
+            className="bg-[#0F6359] rounded-lg p-4 my-4 border-[#0F6359] border-2 w-[80vw] mx-auto text-right"
+          >
             <textarea
               name="content"
-              className="p-2 my-2 h-[100px] w-full bg-gray-100"
-              placeholder="Share your thoughts!"
+              className="p-2 my-2 h-[100px] w-full bg-white"
+              placeholder="Write Something!"
               value={createFormData.content}
               required
               minLength={5}

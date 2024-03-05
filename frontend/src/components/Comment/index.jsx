@@ -31,8 +31,8 @@ export default function Comment({ data, refreshComments }) {
     <form onSubmit={handleSubmit}>
         <textarea
                     name="content"
-                    className="p-2 my-2 h-[100px] w-full bg-gray-100"
-                    placeholder="Share your thoughts!"
+                    className="p-2 my-2 h-[100px] w-full bg-[#0F6359]"
+                    placeholder="Write Something"
                     value={editFormData.content}
                     onChange={handleInputChange}
                 />
@@ -53,18 +53,19 @@ export default function Comment({ data, refreshComments }) {
   } else
   return(
     <div
-                className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 w-[80vw] mx-auto">
+                className="bg-white rounded-lg p-4 my-4 border-[#0F6359] border-2 w-[80vw] mx-auto">
+                   <h2 className="font-bold">{data.userName}</h2>
                 <p className="my-2">{data.content}</p>
-                <h2>{data.userName}</h2>
+               
                 <div className="flex justify-end">
                     <button
                         onClick={() => { setShowEditForm(true) }}
-                        className="text-white hover:bg-gray-800 font-bold py-2 px-4 bg-gray-700 rounded cursor-pointer mr-2">
+                        className="text-white hover:bg-gray-800 font-bold py-2 px-4 bg-[#0F6359] rounded cursor-pointer mr-2">
                         Edit
                     </button>
                     <button
                         onClick={handleDelete}
-                        className="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">
+                        className="bg-[#C2AD97] hover:bg-red-800 text-white font-bold py-2 px-4 rounded">
                         Delete
                     </button>
                 </div>

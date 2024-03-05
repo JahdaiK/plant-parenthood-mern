@@ -21,14 +21,14 @@ export default function DetailsPage() {
     return (
       <>
         <div className="mt-10 mx-5">
-          <div class="bg-[#0F6359] rounded-lg shadow-md lg:flex md:flex ">
+          <div className="bg-[#0F6359] rounded-lg shadow-md lg:flex md:flex ">
             <img
-              class="object-cover w-full md:w-1/2 lg:w-1/3"
+              className="object-cover w-full md:w-1/2 lg:w-1/3"
               src={plantDetails.imageUrl}
               alt="image"
             />
-            <div class="px-6 py-4 text-white ">
-              <h2 class="text-2xl xl:text-6xl font-semibold tracking-tight mb-3 ">
+            <div className="px-6 py-4 text-white ">
+              <h2 className="text-2xl xl:text-6xl font-semibold tracking-tight mb-3 ">
                 {plantDetails.commonName
                   .split(" ")
                   .map((str) => str[0].toUpperCase() + str.substring(1))
@@ -37,7 +37,7 @@ export default function DetailsPage() {
               <h3 className="text-xl xl:text-4xl mb-5">
                 '{plantDetails.scientificName}'
               </h3>
-              <p class="mb-2 text-base xl:text-2xl leading-normal text-justify ">
+              <p className="mb-2 text-base xl:text-2xl leading-normal text-justify ">
                 {plantDetails.description}
               </p>
             </div>
@@ -74,7 +74,7 @@ export default function DetailsPage() {
           </div>
         </div>
 
-        <CommentSection plantId={id} />
+        <CommentSection plantDetails={plantDetails} plantId={id} />
       </>
     );
   }
