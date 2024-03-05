@@ -33,9 +33,9 @@ router.get("/:plantId", async function (req, res) {
       commonName: data.common_name.split(' ').map(str => (str[0].toUpperCase() + str.substring(1))).join(' '),
       careLevel: data.care_level,
       scientificName: data.scientific_name[0],
-      wateringNotes: guideData.data[0].section[1].description || 'unavailable',
-      sunlightNotes: guideData.data[0].section[2].description || 'unavailable', 
-      pruningNotes: guideData.data[0].section[0].description || 'unavailable',
+      wateringNotes: guideData.data[0].section[0].description || 'unavailable',
+      sunlightNotes: guideData.data[0].section[1].description || 'unavailable', 
+      pruningNotes: guideData.data[0].section[2].description || 'unavailable',
     };
     console.log(plantInfo);
     const newPlant = await db.Plant.create(plantInfo)

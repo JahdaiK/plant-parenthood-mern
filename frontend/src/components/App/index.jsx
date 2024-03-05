@@ -37,8 +37,8 @@ export default function App() {
   }
   return (
     <>
-      <div className="">
-        <img className="" src={banner} alt="" />
+      <div className="w-screen">
+        <img className="w-screen" src={banner} alt="" />
       </div>
       <nav className="flex items-center justify-between h-12 bg-[#0F6359] shadow-lg lg:px-9 md:px-6 px-3">
         <Link to="/">

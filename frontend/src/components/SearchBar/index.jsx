@@ -18,7 +18,7 @@ export default function SearchBar({ findPlants, setPlants, fetchPlants }) {
     <>
       <div className="bg-[#C2AD97] p-14">
         <form onSubmit={handleSubmit}>
-          <div class="sm:flex items-center bg-white overflow-hidden px-2 py-1 justify-between">
+          <div className="sm:flex items-center bg-white overflow-hidden px-2 py-1 justify-between">
             <input
               className="text-base text-gray-400 flex-grow outline-none px-2"
               name="search"
@@ -26,7 +26,7 @@ export default function SearchBar({ findPlants, setPlants, fetchPlants }) {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
             />
-            <button class="bg-[#0F6359] text-white text-base rounded-md rounded-sm px-4 py-2 font-bold">
+            <button className="bg-[#0F6359] text-white text-base rounded-md rounded-sm px-4 py-2 font-bold">
               Search
             </button>
           </div>
