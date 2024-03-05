@@ -9,18 +9,23 @@ export default function Card({ plant }) {
   return (
     <>
       <div className="rounded overflow-hidden shadow-lg flex flex-col mx-3">
-        <div className="relative">
-          <img
-            className="w-full h-[200px]"
-            src={smallImage}
-            alt={plant.common_name}
-          />
-        </div>
+        <Link to={"/details/" + plant.id}>
+          <div className="relative">
+            <img
+              className="w-full h-[200px]"
+              src={smallImage}
+              alt={plant.common_name}
+            />
+          </div>
+        </Link>
 
         <div className="px-6 py-3 flex flex-row items-center justify-between bg-[#EDFFCF]">
-          <Link to={"/details/" + plant.id}>
-            <h1 className="text-[#0F6359] font-bold"> {plant.common_name} </h1>
-          </Link>
+          <h1 className="text-[#0F6359] font-bold">
+            {plant.common_name
+              .split(" ")
+              .map((str) => str[0].toUpperCase() + str.substring(1))
+              .join(" ")}{" "}
+          </h1>
         </div>
       </div>
     </>

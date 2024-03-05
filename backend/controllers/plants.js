@@ -29,7 +29,7 @@ router.get("/:plantId", async function (req, res) {
       wateringLevel: data.watering,
       sunlightLevel: data.sunlight[0],
       description: data.description,
-      commonName: data.common_name,
+      commonName: data.common_name.split(' ').map(str => (str[0].toUpperCase() + str.substring(1))).join(' '),
       careLevel: data.care_level,
       scientificName: data.scientific_name[0],
       wateringNotes: guideData.data[0].section[1].description || 'unavailable',

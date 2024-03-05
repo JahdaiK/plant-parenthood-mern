@@ -1,6 +1,7 @@
 import Card from "../Card";
 
 
+
 export default function Gallery({plants}) {
   return (
     <>

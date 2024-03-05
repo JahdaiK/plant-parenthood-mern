@@ -22,25 +22,50 @@ export default function DetailsPage() {
       <>
         <div className="details_container flex">
           <div className="image_wrapper mt-5 ml-10">
-            <img src={plantDetails.imageUrl} alt="" />
+            <img
+              src={plantDetails.imageUrl}
+              alt={plantDetails.commonName
+                .split(" ")
+                .map((str) => str[0].toUpperCase() + str.substring(1))
+                .join(" ")}
+            />
           </div>
-          <div className="plant_details flex">
+          <div className="plant_details mt-5 ml-10">
             <div>
-              <h1>{plantDetails.commonName}</h1>
-              <h1>{plantDetails.scientificName}</h1>
+              <h1 className="font-bold text-4xl">
+                {plantDetails.commonName
+                  .split(" ")
+                  .map((str) => str[0].toUpperCase() + str.substring(1))
+                  .join(" ")}
+              </h1>
+              <h3 className="text-xl">'{plantDetails.scientificName}'</h3>
               <p>{plantDetails.description}</p>
-              <p>{plantDetails.careLevel}</p>
-              <p>{plantDetails.wateringLevel}</p>
-              <p>{plantDetails.sunlightLevel}</p>
+              <ul>
+                <li>Care Level: {plantDetails.careLevel}</li>
+                <li>Watering Level: {plantDetails.wateringLevel}</li>
+                <li>Sunlight Level: {plantDetails.sunlightLevel}</li>
+              </ul>
             </div>
-            <div>
-              <h3>Watering:</h3>
-              <p>{plantDetails.wateringNotes}</p>
-              <h3>Sunlight:</h3>
-              <p>{plantDetails.sunlightNotes}</p>
-              <h3>Pruning:</h3>
-              <p>{plantDetails.pruningNotes}</p>
-            </div>
+          </div>
+        </div>
+        <div className="ml-8 mt-6">
+          <h2 className="font-bold text-3xl ">
+            Caring for your {plantDetails.commonName
+                .split(" ")
+                .map((str) => str[0].toUpperCase() + str.substring(1))
+                .join(" ")}
+          </h2>
+          <div className="mx-4 mt-4 mb-4">
+            <h3 className="font-bold text-xl">Watering:</h3>
+            <p>{plantDetails.wateringNotes}</p>
+          </div>
+          <div className="mx-4 mt-4 mb-4">
+            <h3 className="font-bold text-xl">Sunlight:</h3>
+            <p>{plantDetails.sunlightNotes}</p>
+          </div>
+          <div className="mx-4 mt-4 mb-4">
+            <h3 className="font-bold text-xl">Pruning:</h3>
+            <p>{plantDetails.pruningNotes}</p>
           </div>
         </div>
       </>
