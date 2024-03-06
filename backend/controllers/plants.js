@@ -13,12 +13,12 @@ router.get("/:plantId", async function (req, res) {
     res.json(plant);
   } else {
     const response = await fetch(
-      `https://perenual.com/api/species/details/${req.params.plantId}?key=sk-Tsec65dca9e466d594369`
+      `https://perenual.com/api/species/details/${req.params.plantId}?key=sk-gBUl65e8747e49dcc4480`
     );
     const data = await response.json();
 
     const guideResponse = await fetch(
-      `http://perenual.com/api/species-care-guide-list?species_id=${req.params.plantId}&key=sk-Tsec65dca9e466d594369`
+      `http://perenual.com/api/species-care-guide-list?species_id=${req.params.plantId}&key=sk-gBUl65e8747e49dcc4480`
     );
     const guideData = await guideResponse.json();
 
