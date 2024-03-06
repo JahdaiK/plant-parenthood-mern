@@ -62,11 +62,12 @@ export default function CommentSection({ plantId, plantDetails }) {
   }
   return (
     <>
-      <div className="comment-section rounded-t-lg p-4 pb-10 mt-4 mx-10 space-y-4 relative shadow-xl bg-[#EDFFCF]">
-        <div className="">
-          <h2 className="sm:text-2xl md:text-3xl font-bold text-center text-[#0F6359]">
+    <h2 className="sm:text-2xl md:text-3xl font-bold text-center text-[#0F6359] mt-20">
             Let's Talk: {plantDetails.commonName}
           </h2>
+      <div className="comment-section rounded-t-lg p-4 pb-10 mt-4 mx-10 space-y-4 relative shadow-xl bg-[#C7F07F]">
+        <div className="">
+          
           <button
             className="px-6 py-4 rounded mb-2 ml-10 mt-2 bg-[#0F6359] text-white md:font-bold sm:text-sm md:text-xl "
             onClick={toggleCreateForm}
@@ -78,7 +79,7 @@ export default function CommentSection({ plantId, plantDetails }) {
         {showCreateForm && (
           <form
             onSubmit={handleSubmit}
-            className="bg-[#0F6359] rounded-lg p-4 my-4 border-[#0F6359] border-2 w-[80vw] mx-auto text-right"
+            className="bg-[#0F6359] rounded-lg p-4 my-4 border-[#0F6359] border-2 text-right"
           >
             <textarea
               name="content"

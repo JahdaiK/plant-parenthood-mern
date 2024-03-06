@@ -18,7 +18,7 @@ export default function SearchBar({ findPlants, setPlants, fetchPlants }) {
     <>
       <div className="bg-[#C2AD97] p-14">
         <form onSubmit={handleSubmit}>
-          <div className="sm:flex items-center bg-white overflow-hidden px-2 py-1 justify-between">
+          <div className="rounded sm:flex items-center bg-white overflow-hidden px-2 py-1 justify-between">
             <input
               className="text-base text-gray-400 flex-grow outline-none px-2"
               name="search"

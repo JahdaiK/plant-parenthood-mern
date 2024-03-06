@@ -19,8 +19,8 @@ export default function Card({ plant }) {
           </div>
         </Link>
 
-        <div className="px-6 py-3 flex flex-row items-center justify-between bg-[#EDFFCF]">
-          <h1 className="text-[#0F6359] font-bold">
+        <div className="px-6 py-3 flex flex-row items-center justify-between bg-[#C7F07F]">
+          <h1 className="text-[#0F6350] font-bold">
             {plant.common_name
               .split(" ")
               .map((str) => str[0].toUpperCase() + str.substring(1))
