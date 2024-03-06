@@ -62,13 +62,13 @@ export default function CommentSection({ plantId, plantDetails }) {
   }
   return (
     <>
-      <div className="comment-section bg-[#EDFFCF] rounded-t-lg p-4 pb-10 mt-4 mx-10 space-y-4 relative shadow-xl">
+      <div className="comment-section rounded-t-lg p-4 pb-10 mt-4 mx-10 space-y-4 relative shadow-xl bg-[#EDFFCF]">
         <div className="">
           <h2 className="sm:text-2xl md:text-3xl font-bold text-center text-[#0F6359]">
             Let's Talk: {plantDetails.commonName}
           </h2>
           <button
-            className="px-4 py-2 rounded mb-2 mt-2 bg-[#0F6359] text-white font-bold sm:text-sm md:text-xl "
+            className="px-6 py-4 rounded mb-2 ml-10 mt-2 bg-[#0F6359] text-white md:font-bold sm:text-sm md:text-xl "
             onClick={toggleCreateForm}
           >
             {buttonText}
