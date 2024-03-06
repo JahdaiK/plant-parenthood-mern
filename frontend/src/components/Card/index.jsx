@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import no_image from "../../assets/no_image.png";
 
 export default function Card({ plant }) {
   const smallImage = plant.default_image
     ? plant.default_image.small_url
-    : { logo };
+    : no_image;
 
   return (
     <>

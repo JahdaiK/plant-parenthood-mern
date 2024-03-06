@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CommentSection from "../CommentSection";
 import { getExtraPlantDetails } from "../../../utils/backend";
-import waterlogo from "../../assets/water_droplet_icon.png";
 export default function DetailsPage() {
   const { id } = useParams();
   const [plantDetails, setPlantDetails] = useState(null);
@@ -78,14 +77,4 @@ export default function DetailsPage() {
       </>
     );
   }
-  // return (
-  //   <>
-  //   {plantDetails ?
-
-  //   <p>{plantDetails.common_name}</p>
-
-  //   : <p>Loading</p>}
-  //   <CommentSection plantId={id}/>
-  //   </>
-  // );
 }
