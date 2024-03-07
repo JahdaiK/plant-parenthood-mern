@@ -5,7 +5,7 @@ const router = express.Router();
 const db = require("../models");
 
 const config = require("../../jwt.config.js");
-// const user = require("../models/user.js");
+
 
 /* Middleware that checks if a JWT sent from the client is valid.
    Used for all routes that require authorization
