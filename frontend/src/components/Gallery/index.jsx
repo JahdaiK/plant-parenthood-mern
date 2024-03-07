@@ -11,7 +11,7 @@ export default function Gallery({plants}) {
             <Card key={plant.id} plant={plant} />
           ))
         ) : (
-          <p>Your plants are loading...</p>
+          <p>Plants Are Loading...</p>
         )}
       </div>
     </>
