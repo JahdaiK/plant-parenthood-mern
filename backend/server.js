@@ -45,8 +45,7 @@ app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
 
 /* Mount routes
 --------------------------------------------------------------- */
-// This tells our app to look at the `controllers/comments.js` file 
-// to handle all routes that begin with `localhost:3000/api/comments`
+
 app.use('/api/comments', commentsCtrl)
 app.use('/api/users', usersCtrl)
 app.use('/api/plants', plantsCtrl)

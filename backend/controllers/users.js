@@ -44,11 +44,9 @@ router.post('/signup', (req, res) => {
 // LOG IN (log into a user account)
 router.post('/login', async (req, res) => {
     console.log('log in route')
-    // attempt to find the user by their email in the database
+
     const foundUser = await db.User.findOne({ email: req.body.email })
-    // check to:
-    // 1. make sure the user was found in the database
-    // 2. make sure the user entered in the correct password
+  
     if (foundUser && foundUser.password === req.body.password) {
         // if the above applies, send the JWT to the browser
         const payload = { id: foundUser.id }
@@ -64,6 +62,5 @@ router.post('/login', async (req, res) => {
     }
 })
 
-/* Export these routes so that they are accessible in `server.js`
---------------------------------------------------------------- */
+
 module.exports = router
