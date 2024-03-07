@@ -14,7 +14,7 @@ export default function DetailsPage() {
     };
 
     fetchPlantDetails();
-  }, []);
+  }, [id]);
 
   if (plantDetails) {
     return (
@@ -42,7 +42,7 @@ export default function DetailsPage() {
             </div>
           </div>
         </div>
-
+        {parseInt(id, 10) <= 3000 && (       
         <div className="care_guide mt-20 mx-5">
           <h2 className="font-bold text-[#0F6359] md:text-4xl text-xl ml-5 mb-10">
             Caring For Your{" "}
@@ -72,9 +72,16 @@ export default function DetailsPage() {
             </div>
           </div>
         </div>
-
+        )}
         <CommentSection plantDetails={plantDetails} plantId={id} />
       </>
-    );
-  }
-}
+    ); 
+  } else {
+      return(
+        <>
+        <p>Loading</p>
+        </>
+      );
+    }
+  } 
+
