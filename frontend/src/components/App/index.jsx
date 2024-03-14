@@ -62,8 +62,7 @@ export default function App() {
           element={<AuthFormPage setLoginStatus={setLoginStatus} />}
         />
       </Routes>
-      <footer className="bg-[#0F6359] mt-5 h-[4vh] text-center text-white">
-        {" "}
+      <footer className="sticky bottom-0 bg-[#0F6359] h-[4vh] mt-5 text-center text-white">
         Plant Parenthood
       </footer>
     </>

@@ -19,13 +19,19 @@ export default function Card({ plant }) {
           </div>
         </Link>
 
-        <div className="px-6 py-3 flex flex-row items-center justify-between bg-[#C7F07F]">
-          <h1 className="text-[#0F6350] font-bold">
+        <div className="px-6 py-3 flex flex-col items-center justify-between bg-[#C7F07F]">
+          <p className="text-[#0F6350] font-bold">
             {plant.common_name
               .split(" ")
               .map((str) => str[0].toUpperCase() + str.substring(1))
-              .join(" ")}{" "}
-          </h1>
+              .join(" ")}
+          </p>
+          <p className="text-[#0F6350]">
+            {plant.scientific_name[0]
+              .split(" ")
+              .map((str) => str[0].toUpperCase() + str.substring(1))
+              .join(" ")}
+          </p>
         </div>
       </div>
     </>

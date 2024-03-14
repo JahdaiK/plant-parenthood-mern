@@ -143,12 +143,14 @@ export default function AuthFormPage({ setLoginStatus }) {
           </button>
         </form>
       )}
-      <button
-        className="text-gray-500 mt-5 mx-28 center"
-        onClick={() => setShowSignUp(!showSignUp)}
-      >
-        {showSignUp ? "Not Yet a User? Sign Up" : "Already a User? LogIn"}
-      </button>
+      <div className="flex justify-center">
+        <button
+          className="text-gray-500 mt-5 font-bold"
+          onClick={() => setShowSignUp(!showSignUp)}
+        >
+          {showSignUp ? "Not Yet a User? Sign Up" : "Already a User? LogIn"}
+        </button>
+      </div>
     </>
   );
 }
