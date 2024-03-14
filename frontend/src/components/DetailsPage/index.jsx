@@ -42,46 +42,45 @@ export default function DetailsPage() {
             </div>
           </div>
         </div>
-        {parseInt(id, 10) <= 3000 && (       
-        <div className="care_guide mt-20 mx-5">
-          <h2 className="font-bold text-[#0F6359] md:text-4xl text-xl ml-5 mb-10">
-            Caring For Your{" "}
-            {plantDetails.commonName
-              .split(" ")
-              .map((str) => str[0].toUpperCase() + str.substring(1))
-              .join(" ")}
-          </h2>
-          <div className="grid gap-14 md:grid-cols-3 md:gap-5 mx-5 mb-5">
-            <div className="rounded-xl p-6 text-center shadow-xl border-2 border-[#0F6359] flex flex-col bg-[#0F6359]">
-              <h3 className="font-bold text-3xl text-white mb-3">Watering</h3>
-              <p className="mt-2 text-left text-white text-base lg:text-lg">
-                {plantDetails.wateringNotes}
-              </p>
-            </div>
-            <div className="rounded-xl p-6 text-center shadow-xl border-2 border-[#0F6359] flex flex-col bg-[#0F6359] ">
-              <h3 className="font-bold text-3xl text-white mb-3">Sunlight</h3>
-              <p className="mt-2 text-left text-white text-base lg:text-lg">
-                {plantDetails.sunlightNotes}
-              </p>
-            </div>
-            <div className="rounded-xl p-6 text-center shadow-xl border-2 border-[#0F6359] flex flex-col bg-[#0F6359]">
-              <h3 className="font-bold text-3xl text-white mb-3">Pruning:</h3>
-              <p className="mt-2 text-left text-white text-base lg:text-lg">
-                {plantDetails.pruningNotes}
-              </p>
+        {parseInt(id, 10) <= 3000 && (
+          <div className="care_guide mt-20 mx-5">
+            <h2 className="font-bold text-[#0F6359] md:text-4xl text-xl ml-5 mb-10">
+              Caring For Your{" "}
+              {plantDetails.commonName
+                .split(" ")
+                .map((str) => str[0].toUpperCase() + str.substring(1))
+                .join(" ")}
+            </h2>
+            <div className="grid gap-14 md:grid-cols-3 md:gap-5 mx-5 mb-5">
+              <div className="rounded-xl p-6 text-center shadow-xl border-2 border-[#0F6359] flex flex-col bg-[#0F6359]">
+                <h3 className="font-bold text-3xl text-white mb-3">Watering</h3>
+                <p className="mt-2 text-left text-white text-base lg:text-lg">
+                  {plantDetails.wateringNotes}
+                </p>
+              </div>
+              <div className="rounded-xl p-6 text-center shadow-xl border-2 border-[#0F6359] flex flex-col bg-[#0F6359] ">
+                <h3 className="font-bold text-3xl text-white mb-3">Sunlight</h3>
+                <p className="mt-2 text-left text-white text-base lg:text-lg">
+                  {plantDetails.sunlightNotes}
+                </p>
+              </div>
+              <div className="rounded-xl p-6 text-center shadow-xl border-2 border-[#0F6359] flex flex-col bg-[#0F6359]">
+                <h3 className="font-bold text-3xl text-white mb-3">Pruning:</h3>
+                <p className="mt-2 text-left text-white text-base lg:text-lg">
+                  {plantDetails.pruningNotes}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
         )}
         <CommentSection plantDetails={plantDetails} plantId={id} />
       </>
-    ); 
+    );
   } else {
-      return(
-        <>
+    return (
+      <>
         <p>Loading</p>
-        </>
-      );
-    }
-  } 
-
+      </>
+    );
+  }
+}

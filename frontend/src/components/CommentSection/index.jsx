@@ -40,7 +40,10 @@ export default function CommentSection({ plantId, plantDetails }) {
   }
 
   let commentElements = [
-    <p key="0" className="text-center">
+    <p
+      key="0"
+      className="font-bold md:text-md text-sm ml-5 mb-10 text-center text-[#0F6359]"
+    >
       No comments yet. Be the first to comment!
     </p>,
   ];
@@ -62,12 +65,14 @@ export default function CommentSection({ plantId, plantDetails }) {
   }
   return (
     <>
-    <h2 className="sm:text-2xl md:text-3xl font-bold text-center text-[#0F6359] mt-20">
-            Let's Talk: {plantDetails.commonName}
-          </h2>
+      <h2 className="sm:text-2xl md:text-3xl font-bold text-center text-[#0F6359] mt-20 mb-6">
+        Let's Talk: {plantDetails.commonName}
+      </h2>
+      <h4 className="font-bold text-[#0F6359] md:text-lg text-md ml-10 mb-">
+        Sign In To Leave A Comment
+      </h4>
       <div className="comment-section rounded-t-lg p-4 pb-10 mt-4 mx-10 space-y-4 relative shadow-xl bg-[#C7F07F]">
         <div className="">
-          
           <button
             className="px-6 py-4 rounded mb-2 ml-10 mt-2 bg-[#0F6359] text-white md:font-bold sm:text-sm md:text-xl "
             onClick={toggleCreateForm}
