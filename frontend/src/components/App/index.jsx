@@ -5,6 +5,7 @@ import DetailsPage from "../DetailsPage";
 import AuthFormPage from "../AuthFormPage";
 import { useEffect, useState } from "react";
 import banner from "../../assets/deeper_green_banner.png";
+import AboutPage from "../AboutPage";
 
 export default function App() {
   const [loginStatus, setLoginStatus] = useState(false);
@@ -46,11 +47,15 @@ export default function App() {
         <Link to="/">
           <h1 className="font-bold font-mono text-white">Home</h1>
         </Link>
+        <Link to="/about">
+          <h1 className="font-bold font-mono text-white">About</h1>
+        </Link>
 
         {authLink}
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/details/:id" element={<DetailsPage />} />
         <Route
           path="/auth/"
