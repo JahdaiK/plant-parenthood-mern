@@ -129,7 +129,7 @@ export default function AuthFormPage({ setLoginStatus }) {
               name="password"
               minLength="6"
               required
-              placeholder="Password"
+              placeholder="Password, 6 characters or more"
               value={signUpData.password}
               onChange={handleSignUpChange}
             />
